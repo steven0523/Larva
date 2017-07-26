@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Larva Portal</title>
+    <!-- Material Design fonts -->
+	<!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <!-- Bootstrap Material Design -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-material-design.css">
+    <link rel="stylesheet" type="text/css" href="css/ripples.min.css">
+    <link rel="stylesheet" type="text/css" href="css/smoke.min.css">
+
+
+</head>
+<body style="background-color: #EEEEEE">
+<div class="container" ng-controller="AppCtrl">
+
+        <h1>Larva Portal </h1>
+
+
+
+<div class="panel panel-default">
+    <div class="panel-body">
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>DataCenter</th>
+        <th>Domain</th>
+        <th>Environment</th>
+		<th>Time</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="issue in issues"  >
+        <td>{{issue.dataCenter}}</td>
+        <td>{{issue.environment}}</td>
+        <td>{{issue.domainName}}</td>
+		<td>{{issue.checkTime | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+        <td><button class="btn btn-warning"  ng-click="jumpToUrl('./detail.html',issue._id)">View</button></td>
+
+    </tr>
+    </tbody>
+</table>
+    </div>
+</div>
+</div>
+
+<!--<div ng-controller=‘MyCtrl'>
+
+    <button ng-click="jumpToUrl('/detail')">View</button>
+
+</div>-->
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/material.js"></script>
+<script src="js/ripples.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/angular-route.min.js"></script>
+<script src="js/smoke.min.js"></script>
+
+<script src="controllers/controller.js"></script>
+
+ 
+<script>
+    $.material.init()
+</script>
+</body>
+</html>

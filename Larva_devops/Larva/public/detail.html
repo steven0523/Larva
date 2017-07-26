@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<!--
+	Theory by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Larva Portal - Issue Detail</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="css/larva.css" />
+
+		<script>
+			function GetQueryString(name)
+			{
+				var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+				var r = window.location.search.substr(1).match(reg);
+				if(r!=null)return  unescape(r[2]); return null;
+			}
+
+			function getIssueID(){
+				return GetQueryString('ID');
+			}
+		</script>
+	</head>
+	<body class="subpage" ng-app="detail" ng-controller="DetailCtrl">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="logo">Larva</a>
+					<nav id="nav">
+						<a href="index.html">Home</a>
+						<a href="generic.html">Issues</a>
+						<a href="elements.html">Tags</a>
+						<a href="elements.html">Settings</a>
+					</nav>
+				</div>
+			</header>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="inner">
+					<div class="container" >
+						<h1>Issue detail information </h1>
+						<!--<p  >{{ issueInfo }}</p>-->
+						<p type="text" name="issue_infor"  id="canvas" >
+						</p>
+						
+						<button ng-model="canIgnore" ng-if="canIgnore" ng-click="ignore()">Ignore</button>    
+
+					</div>
+					
+					<div  class="container" ng-controller="logCtrl"   >
+						<button ng-model="canGetLog" ng-if="canGetLog" ng-click="analyze()">Analyze</button>    <br/>
+
+						<div >
+							<a ng-repeat="x in logs | orderBy : 'domain'"  
+							    href="{{x.uploaded?x.path:'#'}}"  class="ng-link-{{ x.uploaded}}">
+								{{ x.domain }}  &nbsp;
+								{{ x.OTAP }}    &nbsp;
+								{{ x.DC }}      &nbsp;
+								{{ x.name }}    &nbsp;
+								{{ x.startTime | date:'yyyy-MM-dd HH:mm:ss' }} -
+								{{ x.endTime | date:'HH:mm:ss' }}<br/>
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<div class="flex">
+						<div class="copyright">
+							&copy; ESB TAB. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.
+						</div>
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						</ul>
+					</div>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/material.js"></script>
+		<script src="js/ripples.min.js"></script>
+		<script src="js/angular.min.js"></script>
+		<script src="js/angular-route.min.js"></script>
+		<script src="js/smoke.min.js"></script>
+		<script src="controllers/layout.js"></script>
+
+		<script src="controllers/detail.js"></script>
+
+		 
+		<script>
+			$.material.init()
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,102 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files (x86)\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.32
+4 verbose node symlink C:\Program Files (x86)\nodejs\\node.exe
+5 warn package.json contactapp@1.0.0 No repository field.
+6 verbose readDependencies using package.json deps
+7 verbose install where, deps [ 'C:\\github\\Larva',
+7 verbose install   [ 'body-parser',
+7 verbose install     'connect-flash',
+7 verbose install     'express',
+7 verbose install     'express-session',
+7 verbose install     'mongodb',
+7 verbose install     'mongojs',
+7 verbose install     'mongoose',
+7 verbose install     'ngRoute' ] ]
+8 info preinstall contactapp@1.0.0
+9 warn package.json string_decoder@1.0.3 string_decoder is also the name of a node core module.
+10 warn package.json mkdirp-sync@0.0.2 No repository field.
+11 verbose readDependencies using package.json deps
+12 verbose already installed skipping body-parser@^1.15.2 C:\github\Larva
+13 verbose already installed skipping connect-flash@^0.1.1 C:\github\Larva
+14 verbose already installed skipping express@^4.14.0 C:\github\Larva
+15 verbose already installed skipping express-session@^1.14.0 C:\github\Larva
+16 verbose already installed skipping mongodb@* C:\github\Larva
+17 verbose already installed skipping mongojs@^2.4.0 C:\github\Larva
+18 verbose already installed skipping mongoose@^4.5.8 C:\github\Larva
+19 verbose cache add [ 'ngRoute@*', null ]
+20 verbose cache add name=undefined spec="ngRoute@*" args=["ngRoute@*",null]
+21 verbose parsed url { protocol: null,
+21 verbose parsed url   slashes: null,
+21 verbose parsed url   auth: null,
+21 verbose parsed url   host: null,
+21 verbose parsed url   port: null,
+21 verbose parsed url   hostname: null,
+21 verbose parsed url   hash: null,
+21 verbose parsed url   search: null,
+21 verbose parsed url   query: null,
+21 verbose parsed url   pathname: 'ngRoute@*',
+21 verbose parsed url   path: 'ngRoute@*',
+21 verbose parsed url   href: 'ngRoute@*' }
+22 verbose cache add name="ngRoute" spec="*" args=["ngRoute","*"]
+23 verbose parsed url { protocol: null,
+23 verbose parsed url   slashes: null,
+23 verbose parsed url   auth: null,
+23 verbose parsed url   host: null,
+23 verbose parsed url   port: null,
+23 verbose parsed url   hostname: null,
+23 verbose parsed url   hash: null,
+23 verbose parsed url   search: null,
+23 verbose parsed url   query: null,
+23 verbose parsed url   pathname: '*',
+23 verbose parsed url   path: '*',
+23 verbose parsed url   href: '*' }
+24 verbose addNamed [ 'ngRoute', '*' ]
+25 verbose addNamed [ null, '*' ]
+26 silly lockFile db6bfc7d-ngRoute ngRoute@*
+27 verbose lock ngRoute@* C:\Users\IBM_ADMIN\AppData\Roaming\npm-cache\db6bfc7d-ngRoute.lock
+28 silly addNameRange { name: 'ngRoute', range: '*', hasData: false }
+29 verbose request where is /ngRoute
+30 verbose request registry https://registry.npmjs.org/
+31 verbose request id 22120a509ac32445
+32 verbose url raw /ngRoute
+33 verbose url resolving [ 'https://registry.npmjs.org/', './ngRoute' ]
+34 verbose url resolved https://registry.npmjs.org/ngRoute
+35 verbose request where is https://registry.npmjs.org/ngRoute
+36 info trying registry request attempt 1 at 15:25:39
+37 http GET https://registry.npmjs.org/ngRoute
+38 http 404 https://registry.npmjs.org/ngRoute
+39 silly registry.get cb [ 404,
+39 silly registry.get   { 'content-type': 'application/json',
+39 silly registry.get     'cache-control': 'max-age=0',
+39 silly registry.get     'content-length': '2',
+39 silly registry.get     'accept-ranges': 'bytes',
+39 silly registry.get     date: 'Fri, 07 Jul 2017 07:25:38 GMT',
+39 silly registry.get     via: '1.1 varnish',
+39 silly registry.get     age: '0',
+39 silly registry.get     connection: 'keep-alive',
+39 silly registry.get     'x-served-by': 'cache-sin18023-SIN',
+39 silly registry.get     'x-cache': 'MISS',
+39 silly registry.get     'x-cache-hits': '0',
+39 silly registry.get     'x-timer': 'S1499412338.849617,VS0,VE413',
+39 silly registry.get     vary: 'Accept-Encoding' } ]
+40 silly lockFile db6bfc7d-ngRoute ngRoute@*
+41 silly lockFile db6bfc7d-ngRoute ngRoute@*
+42 error 404 Not Found
+42 error 404
+42 error 404 'ngRoute' is not in the npm registry.
+42 error 404 You should bug the author to publish it
+42 error 404 It was specified as a dependency of 'contactapp'
+42 error 404
+42 error 404 Note that you can also install from a
+42 error 404 tarball, folder, or http url, or git url.
+43 error System Windows_NT 6.1.7601
+44 error command "C:\\Program Files (x86)\\nodejs\\\\node.exe" "C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install"
+45 error cwd C:\github\Larva
+46 error node -v v0.10.32
+47 error npm -v 1.4.28
+48 error code E404
+49 verbose exit [ 1, true ]

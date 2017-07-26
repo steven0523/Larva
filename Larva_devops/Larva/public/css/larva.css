@@ -1,0 +1,37 @@
+.ng-hide-false {
+  color: gray
+}
+
+.ng-hide-true {
+  color: blue
+}
+
+
+.area {
+  border:1px solid #99F;
+}
+
+.ALIVE {
+  background-color:#0f0;
+}
+
+.STARTED {
+  background-color:#0f0
+}
+.Started {
+  background-color:#0f0
+}
+.Active {
+  background-color:#0f0
+}
+.ACTIVE {
+  background-color:#0f0
+}
+
+.Stopped{
+  background-color:#f00
+}
+
+section{
+  padding: 1em
+}

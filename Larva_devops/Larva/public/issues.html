@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<!--
+	Theory by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Larva Portal - Issues</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="subpage" ng-app="myApp" ng-controller="AppCtrl">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="logo">Larva</a>
+					<nav id="nav">
+						<a href="index.html">Home</a>
+						<a href="generic.html">Issues</a>
+						<a href="elements.html">Tags</a>
+						<a href="elements.html">Settings</a>
+					</nav>
+				</div>
+			</header>
+
+			<section id="main" class="wrapper">
+			<div class="inner" when-scrolled="loadMore()" >
+				<table class="table">
+					<thead>
+					<tr>
+						<th>Issue No.</th>
+						<th>DataCenter</th>
+						<th>Domain</th>
+						<th>Environment</th>
+						<th>Time</th>
+						<th></th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr ng-repeat="issue in issues"  >
+						<td>{{issue._id.substring(issue._id.length-6,issue_id.length)}}</td>
+						<td>{{issue.dataCenter}}</td>
+						<td>{{issue.environment}}</td>
+						<td>{{issue.domainName}}</td>
+						<td>{{issue.checkTime | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+						<td><button class="btn btn-warning"  ng-click="jumpToUrl('./detail.html',issue._id)">View</button></td>
+
+					</tr>
+					</tbody>
+				</table>
+			</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<div class="flex">
+						<div class="copyright">
+							&copy; ESB TAB. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.
+						</div>
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						</ul>
+					</div>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/material.js"></script>
+		<script src="js/ripples.min.js"></script>
+		<script src="js/angular.min.js"></script>
+		<script src="js/angular-route.min.js"></script>
+		<script src="js/smoke.min.js"></script>
+
+		<script src="controllers/controller.js"></script>
+
+		 
+		<script>
+			$.material.init()
+		</script>
+	</body>
+</html>

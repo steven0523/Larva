@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<script>
+    function GetQueryString(name)
+    {
+        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if(r!=null)return  unescape(r[2]); return null;
+    }
+
+    function getIssueID(){
+        return GetQueryString('ID');
+    }
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Detail</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <!-- Bootstrap Material Design -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-material-design.css">
+    <link rel="stylesheet" type="text/css" href="css/ripples.min.css">
+    <link rel="stylesheet" type="text/css" href="css/smoke.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/larva.css">
+
+
+
+
+<body  ng-app="detail">
+    <div class="container" ng-controller="DetailCtrl">
+        <h1>Issue detail information </h1>
+        <p type="text" name="issue_infor"  id="p1" width="200" height="500">{{ issueInfo }}</p>
+		
+		<button ng-model="canIgnore" ng-if="canIgnore" ng-click="ignore()">Ignore</button>    
+
+    </div>
+	
+	<div  class="container" ng-controller="logCtrl"   >
+		<button ng-model="canGetLog" ng-if="canGetLog" ng-click="analyze()">Analyze</button>    <br/>
+
+		<div >
+			<a ng-repeat="x in logs | orderBy : 'domain'"  href="./{{x.path?x.path:x._id}}"  class="ng-hide-{{ x.uploaded}}">
+				{{ x.domain }}  &nbsp;
+				{{ x.OTAP }}    &nbsp;
+				{{ x.DC }}      &nbsp;
+				{{ x.name }}    &nbsp;
+				{{ x.startTime | date:'yyyy-MM-dd HH:mm:ss' }} -
+				{{ x.endTime | date:'HH:mm:ss' }}<br/>
+			</a>
+		</div>
+	</div>
+
+</body>
+
+
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/material.js"></script>
+<script src="js/ripples.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/angular-route.min.js"></script>
+<script src="js/smoke.min.js"></script>
+<script src="controllers/controller.js"></script>
+<script src="controllers/detail.js"></script>
+
+<script>
+    $.material.init()
+</script>
+
+</html>
